@@ -1,0 +1,40 @@
+<% if notice %>
+<div class="profile-notice alert alert-warning alert-dismissible fade show" role="alert">
+  <%= notice%>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% end %>
+<div class="show-fastorder">
+<%= link_to "Would you like to sign in?", new_user_registration_path, class:"sign-in-prompt" %>
+<p>
+  <strong>Product name:</strong>
+  <%= @fastorder.product_name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @fastorder.quantity %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @fastorder.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @fastorder.phone %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @fastorder.zip_code %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fastorder.date %>
+</p>
+
+<%= link_to 'Back', root_path, class:"btn btn-sm btn-info" %>
+</div>

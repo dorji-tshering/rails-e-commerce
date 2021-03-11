@@ -1,0 +1,101 @@
+// show profile styles
+div.profile{
+    text-align: justify;
+    width: 30vw;
+    margin: 0 auto 0 auto; 
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.profile h1 {
+    font-size: larger;
+    text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div.profile-notice{
+    text-align: center;
+    width: 50vw;
+    margin: 0 auto 0 auto;
+    font-size: small;
+}
+
+div#profile-account{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+// end
+
+// profile edit styles
+
+div.edit-profile{
+    width: 35vw;
+    margin: 0 auto 0 auto;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+.edit-profile h1{
+    font-size: larger;
+    text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    font-style: ceil($number: 12);
+}
+
+.edit-profile .form-label{
+    font-size: small;
+    text-align: center;
+    color: rgb(160, 9, 9);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.edit-profile div.update{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+// end 
+
+// create profile styles
+
+div.create-profile{
+    width: 35vw;
+    margin: 0 auto 0 auto;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+div.create-profile .field{
+    margin-bottom: 5px;
+}
+
+div.create-profile .create{
+    text-align: center;
+}
+
+div.create-profile h1{
+    font-size: larger;
+    text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    font-style: ceil($number: 12);
+}
+
+
+
+
+
+
+
+
+
+
+
+// end 

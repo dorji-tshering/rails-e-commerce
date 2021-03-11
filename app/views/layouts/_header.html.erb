@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+        <%= link_to 'Home', root_path, class:"nav-link" %>
+    </li>    
+    <li class="nav-item">
+        <%= link_to 'About Us', root_path, class:"nav-link" %>
+    </li> 
+    <li class="nav-item">
+        <%= link_to 'Orders', fastorders_path, class:"nav-link" %>
+    </li>
+    <% if user_signed_in? %>
+    <li class="nav-item">
+        <%= link_to 'My Orders', orders_path, class:"nav-link" %>
+    </li> 
+    <li class="nav-item">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"nav-link" %>
+    </li>
+    <% if current_user.profile == nil %> 
+    <li class="nav-item">
+        <%= link_to 'Create Profile', new_profile_path, class:"nav-link" %>
+    </li>     
+    <% else %>
+    <li class="nav-item">
+        <%= link_to 'My Profile', profile_path(id: current_user.id), class:"nav-link" %>
+    </li> 
+    <li class="nav-item">
+        <%= link_to "Deliver to: #{current_user.profile.address}", 
+        profile_path(id: current_user.id), class:"nav-link delivery-address" %>
+    </li>
+    <% end %>
+    <% else %>
+    <li class="nav-item">
+        <%= link_to 'Sign in', new_user_session_path, class:"nav-link" %>
+    </li> 
+    <li class="nav-item">
+        <%= link_to 'Sign up', new_user_registration_path, class:"nav-link" %>
+    </li>
+    <% end %>     
+    
+    <li class="nav-item d-flex search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success btn-sm btn-info" type="submit">search</button>  
+    </li> 
+    </ul>
+</nav>

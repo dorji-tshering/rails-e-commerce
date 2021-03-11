@@ -1,0 +1,26 @@
+<div class="product-container">
+    <% if user_signed_in? %>
+    <% if current_user.profile != nil %>
+    <% end %>
+    <% end %>
+    <h1>Visit the Gildan Store</h1>
+    <p class="info">Men's Fleece Hooded Sweatshirt, Style G18900</p>
+    <%= image_tag("products/hoodie.jpg")%>
+    <br>
+    <br>
+    <%= link_to 'Back', :back, class:"btn btn-info btn-sm" %>
+    
+    <% if !user_signed_in? %>
+    <%= link_to "Order Now", new_fastorder_path(name: 'hoodie'), class:"btn btn-warning btn-sm" %>
+    <% else %>
+    <%= link_to "Order Now", new_order_path(name: 'hoodie'), class:"btn btn-warning btn-sm" %>
+    <% end %>
+    <h3>DESCRIPTION</h3>
+    <p class="description">
+        When it comes to warm and cozy cool-weather wear, the Gildan Heavy Blend 
+        hooded sweatshirt is always the perfect call. Offering the weighty pullover 
+        feel of 8.0 oz.per sq. yd., it offers the kind of grab-and-go comfort 
+        you'll want on a chilly afternoon or a crisp evening. Made from a 50% cotton
+        / 50% polyester blend, it's the one hoodie every wardrobe deserves.
+    </p>
+</div>

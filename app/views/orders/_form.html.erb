@@ -1,0 +1,74 @@
+<div class="order-form">
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% form.label :product_name, class:"form-label" %>
+    <%= form.text_field :product_name, value: @product_name, class:"form-control",
+      type: :hidden %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :quantity, class:"form-label" %>
+    <%= form.number_field :quantity, class:"form-control" %>
+  </div>
+  
+  <% if current_user.profile != nil %>
+  <div class="field">
+    <%= form.label :address, class:"form-label" %>
+    <%= form.text_field :address, value: current_user.profile.address, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, class:"form-label" %>
+    <%= form.text_field :phone, value: current_user.profile.phone, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code, class:"form-label" %>
+    <%= form.text_field :zip_code, value: current_user.profile.zip_code, class:"form-control" %>
+  </div>  
+
+  <% else %>
+
+  <div class="field">
+    <%= form.label :address, class:"form-label" %>
+    <%= form.text_field :address, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, class:"form-label" %>
+    <%= form.text_field :phone, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code, class:"form-label" %>
+    <%= form.text_field :zip_code, class:"form-control" %>
+  </div>  
+  <% end %>
+  <br>
+  <div class="field">
+    <% form.label :date, class:"form-label" %>
+    <%= form.date_select :date, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <% form.label :user_id %>
+    <%= form.number_field :user_id, type: :hidden, value: current_user.id %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit class:"btn btn-sm btn-warning", value:"Submit Order" %>
+  </div>
+<% end %>
+</div>

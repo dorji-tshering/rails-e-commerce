@@ -1,0 +1,49 @@
+<div class="instant-order">
+<%= form_with(model: fastorder) do |form| %>
+  <% if fastorder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fastorder.errors.count, "error") %> prohibited this fastorder from being saved:</h2>
+
+      <ul>
+        <% fastorder.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% form.label :product_name %>
+    <%= form.text_field :product_name, value: @product_name, type: :hidden %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, class:"form-label" %>
+    <%= form.number_field :quantity, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, class:"form-label" %>
+    <%= form.text_field :address, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, class:"form-label" %>
+    <%= form.text_field :phone, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code, class:"form-label" %>
+    <%= form.text_field :zip_code, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field">
+    <%form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+  <br>
+  <div class="actions", id="SubmitForm">
+    <%= form.submit class:"btn btn-sm btn-warning instant-order", value:"Submit Order", id:"submit" %>
+  </div>
+<% end %>
+</div>

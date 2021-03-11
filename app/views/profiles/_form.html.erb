@@ -1,0 +1,77 @@
+<%= form_with(model: profile) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% if current_user.profile == nil%>
+  <div class="field">
+    <% form.label :first_name %>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"first name" %>
+  </div>
+
+  <div class="field">
+    <% form.label :last_name, class:"form-label" %>
+    <%= form.text_field :last_name, class:"form-control", placeholder:"last name" %>
+  </div>
+
+  <div class="field">
+    <% form.label :address %>
+    <%= form.text_field :address, class:"form-control", placeholder:"address" %>
+  </div>
+
+  <div class="field">
+    <% form.label :phone %>
+    <%= form.text_field :phone, class:"form-control", placeholder:"phone" %>
+  </div>
+
+  <div class="field">
+    <% form.label :zip_code %>
+    <%= form.text_field :zip_code, class:"form-control", placeholder:"zip code" %>
+  </div>
+  <div class="actions create">
+    <%= form.submit class:"btn btn-danger btn-sm", value:"Create" %>
+  </div>
+  
+<% else %>
+  <div class="field">
+    <%= form.label :first_name, class:"form-label" %>
+    <%= form.text_field :first_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name, class:"form-label" %>
+    <%= form.text_field :last_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, class:"form-label" %>
+    <%= form.text_field :address, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, class:"form-label" %>
+    <%= form.text_field :phone, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code, class:"form-label" %>
+    <%= form.text_field :zip_code, class:"form-control" %>
+  </div>
+
+   <div class="actions update">
+    <%= form.submit class:"btn btn-danger btn-sm", value:"Update" %>
+  </div>
+<% end %>
+  <div class="field">
+    <% form.label :user_id %>
+    <%= form.number_field :user_id, value: current_user.id, type: :hidden %>
+  </div>
+ 
+<% end %>

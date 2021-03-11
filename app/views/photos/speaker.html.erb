@@ -1,0 +1,27 @@
+<div class="product-container">
+    <% if user_signed_in? %>
+    <% if current_user.profile != nil %>
+    <% end %>
+    <% end %>
+    <h1>Visit the JBL Store</h1>
+    <p class="info">JBL FLIP 4 - Waterproof Portable Bluetooth Speaker - Black</p>
+    <%= image_tag("products/speaker.jpg")%>
+    <br>
+    <br>
+    <%= link_to 'Back', :back, class:"btn btn-info btn-sm" %>
+
+    <% if !user_signed_in? %>
+    <%= link_to "Order Now", new_fastorder_path(name: 'speaker'), class:"btn btn-warning btn-sm" %>
+    <% else %>
+    <%= link_to "Order Now", new_order_path(name: 'speaker'), class:"btn btn-warning btn-sm" %>
+    <% end %>
+    <h3>DESCRIPTION</h3>
+    <p class="description">
+        JBL FLIP 4 is the next generation in the Flip series; it is a portable 
+        Bluetooth speaker that delivers surprisingly powerful stereo sound. This
+        compact speaker is powered by a 3000mAh rechargeableLi-ion battery that 
+        offers 12 hours of continuous, high quality audio playtime. Sporting durable,
+        waterproof fabric materials that are available in 6 vibrant colors, Flip 4
+        is the all purpose, all weather compannion that takes the party everywhere.
+    </p>
+</div>

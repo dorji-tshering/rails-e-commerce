@@ -1,0 +1,2 @@
+class Fastorder < ApplicationRecord
+end

@@ -1,0 +1,30 @@
+<div class="product-container">
+    <% if user_signed_in? %>
+    <% if current_user.profile != nil %>
+    <% end %>
+    <% end %>
+    <h1>Visit the L'Oreal Paris Store</h1>
+    <p class="info">
+        L'Oreal Paris Skincare Collagen Face Moisturizer, Day and Night 
+        Cream, Anti-Aging Face, Neck and Chest Cream to smooth skin 
+        and reduce wrinkles, 1.7 oz
+    </p>
+    <%= image_tag("products/cream.jpg")%>
+    <br>
+    <br>
+    <%= link_to 'Back', :back, class:"btn btn-info btn-sm" %>
+    <% if !user_signed_in? %>
+    <%= link_to "Order Now", new_fastorder_path(name: 'cream'), class: "btn btn-warning btn-sm" %>
+    <% else %>
+    <%= link_to "Order Now", new_order_path(name: 'cream'), class: "btn btn-warning btn-sm" %>
+    <% end %>
+    <h3>DESCRIPTION</h3>
+    <p class="description">
+        A dose of intense hydration and natural Collagen in Collagen Filler Moisturizer
+        Day Lotion and Day/Night Cream is essential for younger-looking skin. Rich
+        moisture instantly restores skin's cusion and bounce. Over time, the powerful 
+        natural Collagen helps fill in lines and wrinkles, leaving your skin smooth
+        and plump. Use it for a complete Collagen-infused skincare regimen. *Based on 
+        comsumer evaluation of 50 women.
+    </p>
+</div>

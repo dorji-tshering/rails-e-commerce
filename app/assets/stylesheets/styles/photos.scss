@@ -1,0 +1,75 @@
+// styles for photos/index page
+
+div.photo-container{
+    margin-top: 20px;
+}
+
+div.grid-item{
+    text-align: center;
+}
+
+div.inner-item{
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+div.inner-item a{
+    text-decoration: none;
+}
+
+h1#photos-index-h1{
+    text-align: center;
+    font-size: medium;
+    color: gray;
+}
+// end
+
+// styles for individual products page
+div.product-container{
+    text-align: center;
+}
+
+.product-container h1{
+    font-size: larger;
+    font-weight: bolder;
+    color: maroon;
+}
+
+.product-container p.info{
+    color: green;
+}
+
+.product-container h3{
+    font-size: large;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.product-container p.description{
+    text-align: justify;
+}
+
+.product-container .btn-info{
+    margin-right: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

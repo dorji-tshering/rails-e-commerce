@@ -1,0 +1,71 @@
+// index page styles
+
+div.orders{
+    font-size: small;
+}
+
+div.orders h1{
+    text-align: center;
+    font-size: large;
+    color: rebeccapurple;
+}
+
+div.orders .product-name{
+    text-decoration: none;
+    font-style: italic;
+    color: white;
+}
+
+// end 
+
+// order form styles
+
+div.order-form .form-label{
+    font-size: small;
+    font-style: italic;
+    font-weight: bold;
+}
+
+div.order-form .actions{
+    text-align: center;
+}
+
+// end 
+
+// new order styles
+
+div.new-order{
+    width: 50vw;
+    margin: 0 auto 0 auto;
+}
+
+div.new-order h1 {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    color:saddlebrown;
+}
+
+div.new-order p{
+    text-align: center;
+    margin-top: 5px;
+}
+
+// end
+
+// show order styles
+
+div.show-order{
+    width: 30vw;
+    margin: 0 auto 0 auto;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    padding: 10px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+// end
+
+
+
+
+

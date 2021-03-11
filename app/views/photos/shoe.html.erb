@@ -1,0 +1,22 @@
+<div class="product-container">
+    <% if user_signed_in? %>
+    <% if current_user.profile != nil %>
+    <% end %>
+    <% end %>
+    <h1>Visit the Under Armour Store</h1>
+    <p class="info">Men's Hypebeast 1 Sports Running Shoes</p>
+    <%= image_tag("products/shoe.jpg")%>
+    <br>
+    <br>
+    <%= link_to 'Back', :back, class:"btn btn-info btn-sm" %>    
+    <% if !user_signed_in? %>
+    <%= link_to "Order Now", new_fastorder_path(name: 'shoe'), class:"btn btn-warning btn-sm" %>
+    <% else %>
+    <%= link_to "Order Now", new_order_path(name: 'shoe'), class:"btn btn-warning btn-sm" %>
+    <% end %>
+    <h3>DESCRIPTION</h3>
+    <p class="description">
+        Neutral for runners who need a balance and flexibility and cushioning. 
+        Lightweight mesh upper with 3-color digital print delivers complete breathability.
+    </p>
+</div>

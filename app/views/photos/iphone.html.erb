@@ -1,0 +1,25 @@
+<div class="product-container">
+<% if user_signed_in? %>
+    <% if current_user.profile != nil %>
+    <% end %>
+    <% end %>
+    <h1>Apple</h1>
+    <p class="info">Apple iPhone 11(128GB) Sim-Free</p>
+    <%= image_tag("products/iphone.jpeg")%>
+    <br>
+    <br>
+    <%= link_to 'Back', :back, class:"btn btn-info btn-sm" %>
+
+    <% if !user_signed_in? %>
+    <%= link_to "Order Now", new_fastorder_path(name: 'hoodie'), class:"btn btn-warning btn-sm"%>
+    <% else %>
+    <%= link_to "Order Now", new_order_path(name: 'hoodie'), class:"btn btn-warning btn-sm"%>
+    <% end %>
+    <h3>DESCRIPTION</h3>
+    <p class="description">
+        iPhone 11 mini packs big features in a 5.4-inch design. A beautifully bright
+        and compact Super Retina XDR display. Ceramic Shield with four times better
+        drop performance. Incredible low light photography with Night mode on all 
+        cameras. Cinema grade Dolby Vision HDR video recording, editing and playback.
+    </p>
+</div>

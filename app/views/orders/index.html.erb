@@ -1,0 +1,39 @@
+<div class="orders">
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+<h1>Here is the list of your orders</h1>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>Product name</th>
+      <th>Quantity</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Zip code</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <% if current_user == order.user %>
+        <td><%= link_to order.product_name, order, class:"product-name" %></td>
+        <td><%= order.quantity %></td>
+        <td><%= order.address %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.zip_code %></td>
+        <td><%= order.date %></td>
+        <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' },
+            class:"btn btn-sm btn-danger" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>
+</div>

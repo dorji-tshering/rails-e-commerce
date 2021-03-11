@@ -1,0 +1,27 @@
+<div class="product-container">
+    <% if user_signed_in? %>
+    <% if current_user.profile != nil %>
+    <% end %>
+    <% end %>
+    <h1>Visit the Samsung Store</h1>
+    <p class="info">SAMSUNG 85-inch Class Crystal UHD TU-800 Series</p>
+    <%= image_tag("products/tv.jpg")%>
+    <br>
+    <br>
+    <%= link_to 'Back', :back, class:"btn btn-info btn-sm" %>
+    
+    <% if !user_signed_in? %>
+    <%= link_to "Order Now", new_fastorder_path(name: 'tv'), class:"btn btn-warning btn-sm" %>
+    <% else %>
+    <%= link_to "Order Now", new_order_path(name: 'tv'), class:"btn btn-warning btn-sm" %>
+    <% end %>
+    <h3>DESCRIPTION</h3>
+    <p class="description">
+        Experience immersive viewing when you add this Samsung 40 in. Smart TV to your
+        home. The wide color enhancer and Full HD resolution deliver vibrant picture
+        quality, while the Digital Clena view optimizes content for better results.
+        A unique lifestyle gallery creates scenic views for any room in your home 
+        when this TV is not in use. It also features support for Samsung Smart things
+        app to complete your home automation step.
+    </p>
+</div>
